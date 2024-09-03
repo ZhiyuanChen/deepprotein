@@ -67,7 +67,7 @@ jobs:
           path: .cache
       - run: pip install -r docs/requirements.txt
       - name: Download coverage report
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: coverage
           path: htmlcov
