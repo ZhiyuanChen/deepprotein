@@ -15,13 +15,13 @@ keywords = [
   "Protein",
   "RNA",
 ]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 maintainers = [
-    {name = "Zhiyuan Chen", email = "chenzhiyuan@dp.tech"},
+  { name = "Zhiyuan Chen", email = "chenzhiyuan@dp.tech" },
 ]
 authors = [
-    {name = "Zhiyuan Chen", email = "chenzhiyuan@dp.tech"},
-    {name = "Lvjun Guo", email = "guolj@dp.tech"},
+  { name = "Zhiyuan Chen", email = "chenzhiyuan@dp.tech" },
+  { name = "Lvjun Guo", email = "guolj@dp.tech" },
 ]
 requires-python = ">=3"
 classifiers = [
@@ -31,11 +31,11 @@ classifiers = [
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dynamic = [
@@ -48,19 +48,18 @@ dependencies = [
   "einops",
   "numpy",
   "pandas",
-  'strenum; python_version < "3.11"',
+  "strenum; python_version<'3.11'",
   "torch",
   "torcheval",
   "torchmetrics",
   "transformers",
 ]
-[project.urls]
-documentation = "http://deepprotein.danling.org"
-homepage = "http://deepprotein.danling.org"
-repository = "https://github.com/ZhiyuanChen/DeepProtein"
+urls.documentation = "http://deepprotein.danling.org"
+urls.homepage = "http://deepprotein.danling.org"
+urls.repository = "https://github.com/ZhiyuanChen/DeepProtein"
 
 [tool.setuptools]
-packages = ["deepprotein"]
+packages = [ "deepprotein" ]
 
 [tool.setuptools_scm]
 write_to = "deepprotein/_version.py"
@@ -75,29 +74,6 @@ profile = "black"
 
 [tool.flake8]
 max-line-length = 120
-
-[tool.pytest.ini_options]
-addopts = "--doctest-modules --cov"
-
-[tool.coverage.run]
-branch = true
-omit = ["setup.py", "versioning.py", "tests/*"]
-
-[tool.coverage.paths]
-source = ["chanfig"]
-
-[tool.coverage.xml]
-output = "coverage.xml"
-
-[tool.coverage.json]
-output = "coverage.json"
-
-[tool.coverage.report]
-show_missing = true
-fail_under = 60
-
-[tool.mypy]
-ignore_missing_imports = true
 
 [tool.pylint.format]
 max-line-length = 120
@@ -119,3 +95,26 @@ output-format = "colorized"
 
 [tool.pylint.main]
 fail-under = 9.8
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --cov"
+
+[tool.coverage.run]
+branch = true
+omit = [ "setup.py", "versioning.py", "tests/*" ]
+
+[tool.coverage.paths]
+source = [ "chanfig" ]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.coverage.json]
+output = "coverage.json"
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 60
+
+[tool.mypy]
+ignore_missing_imports = true
